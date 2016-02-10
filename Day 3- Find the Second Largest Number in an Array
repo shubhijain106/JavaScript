@@ -1,0 +1,32 @@
+function processData(myArray) 
+{
+myArray.sort(function(a, b){return a-b});
+  for(var i=0;i<myArray.length-1;i++)
+      {
+          if(myArray[i]==myArray[i+1])
+              myArray[i+1]=0;
+      }
+   
+    
+    for(var i=myArray.length-1;i>0;i--)
+        {
+            if(myArray[i]!=0 && myArray[i]<myArray[i+1])
+            { console.log(myArray[i]);
+              break;}
+        }
+   
+}
+
+
+// tail starts here
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input.split('\n')[1].split(' ').map(Number));
+});
+
