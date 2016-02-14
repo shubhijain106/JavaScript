@@ -1,0 +1,27 @@
+function processData(input) {
+     var rows = input.split('\n');
+    var max = rows[0].split(' ').map(Number)[1];
+    var arr = rows[1].split(' ').map(Number);
+    arr = arr.sort(function(a, b){return a-b}); 
+    var count=0;
+    var i=0;
+    while(max>=0)
+    {
+        max=max-arr[i];
+        i++;
+        count++;
+    }
+    console.log(count-1);
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
+

@@ -1,0 +1,10 @@
+//Write your code below this line.
+
+for(var i of my_array){
+    var str=i;
+    if(i==reverse(i))
+    {console.log(str);}  
+}
+function reverse(s){
+    return s.split("").reverse().join("");
+}
