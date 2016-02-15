@@ -1,0 +1,36 @@
+function processData(input) {
+
+    var str="";
+    for(var i=0;i<8;i++)
+       str=str+" ";
+
+console.log(str+"*");
+var z=1;
+var s=8;
+for(var i=0;i<9;i++)
+    {
+        var str="";
+        for(var j=0;j<s;j++)
+            str=str+" ";
+        var str1="";
+        for(var j=0;j<z;j++)
+            str1=str1+0;
+        console.log(str + str1);
+        z=z+2;
+        s=s-1;
+    }
+}            
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
+
+
+
+

@@ -1,0 +1,24 @@
+function processData(input) {
+   var str="";
+    for(var i=0;i<14;i++)
+       {
+          if(i%2==0)
+              str=str+"\u2571";
+           else
+               str=str+"\u2572";
+       }
+    for(var i=0;i<14;i++)
+        {console.log(str);}
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
+

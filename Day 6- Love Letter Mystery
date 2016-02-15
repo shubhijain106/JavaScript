@@ -1,0 +1,29 @@
+function processData(input) {
+ 
+    
+var string=input.split('\n');
+var count=parseInt(string[0]);
+
+for(var x=0;x<count;x++)
+{
+    var str = input.split('\n')[x+1];
+    var len = str.length;
+    var k=0;
+    for(var i=len-1;i>=len/2;i--)
+        {
+           k=Math.abs(str.charCodeAt(i)-str.charCodeAt(len-1-i))+k;
+        }
+    console.log(k);
+}} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
+
